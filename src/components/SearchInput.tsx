@@ -24,7 +24,7 @@ const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
         id="filter"
         aria-describedby="filter-label"
         spellCheck="false"
-        className="w-full h-12 rounded mb-10 pl-[74px] bg-lightElement dark:bg-darkElement placeholder-lightInput dark:placeholder-darkText text-xs"
+        className="w-full h-12 rounded mb-10 pl-[74px] bg-lightElement dark:bg-darkElement placeholder-lightInput dark:placeholder-darkText text-xs font-normal"
         placeholder="Search for a country…"
         value={filter}
         onChange={handleChange}

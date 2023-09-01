@@ -1,36 +1,69 @@
+import { useEffect, useState } from "react";
+
 import Header from "../components/Header";
 import SearchInput from "../components/SearchInput";
 import CountryCard from "../components/CountryCard";
+import FilterSelect from "../components/FilterSelect";
 
 import countries from "../__mocks__/data.json";
-import { useEffect, useState } from "react";
 
 const countriesArray: Country[] = countries;
+const regionsArray: string[] = [
+  ...new Set(countries.map((country) => country.region).sort()),
+];
 
 export default function Home() {
   const [countriesToShow, setCountriesToShow] = useState(countriesArray);
-  const [filter, setFilter] = useState("");
+  const [countryFilter, setCountryFilter] = useState("");
+  const [regionFilter, setRegionFilter] = useState("");
 
-  const handleChangeOfFilter = (str: string): void => {
-    setFilter(str);
+  const handleChangeOfCountryFilter = (str: string): void => {
+    setCountryFilter(str);
+  };
+
+  const handleChangeOfRegionFilter = (str: string): void => {
+    setRegionFilter(str);
   };
 
   useEffect(() => {
-    const filterCountries = (filter: string): Country[] => {
-      return countriesArray.filter((country) => {
+    const filterByCountry = (arr: Country[], filter: string): Country[] => {
+      return arr.filter((country) => {
         return country.name.toLowerCase().includes(filter.toLowerCase());
       });
     };
 
-    setCountriesToShow(filterCountries(filter));
-  }, [filter]);
+    const filterByRegion = (arr: Country[], filter: string): Country[] => {
+      return arr.filter((country) => {
+        return country.region.toLowerCase().includes(filter.toLowerCase());
+      });
+    };
+
+    const arrFilteredByCountry = filterByCountry(countriesArray, countryFilter);
+    const arrFilteredByRegion = filterByRegion(countriesArray, regionFilter);
+
+    const intersection = (
+      firstArr: Country[],
+      secondArr: Country[]
+    ): Country[] => {
+      const first: Set<Country> = new Set(firstArr);
+      const second: Set<Country> = new Set(secondArr);
+      return [...first].filter((item) => second.has(item));
+    };
+
+    setCountriesToShow(intersection(arrFilteredByCountry, arrFilteredByRegion));
+  }, [countryFilter, regionFilter]);
 
   return (
     <>
       <Header />
 
       <main className="px-4 py-6">
-        <SearchInput onChangeOfFilter={handleChangeOfFilter} />
+        <SearchInput onChangeOfFilter={handleChangeOfCountryFilter} />
+
+        <FilterSelect
+          regionsArray={regionsArray}
+          onChangeOfFilter={handleChangeOfRegionFilter}
+        />
         <div className="px-10">
           {countriesToShow.map((country, index) => (
             <CountryCard
