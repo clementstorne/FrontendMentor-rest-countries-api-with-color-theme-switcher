@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BsMoon } from "react-icons/bs";
+import { IoMoonOutline } from "react-icons/io5";
 
 const switchDarkMode = (e: React.MouseEvent<HTMLButtonElement>): void => {
   e.preventDefault;
@@ -31,7 +31,7 @@ const DarkModeButton = (): JSX.Element => {
       className="flex flex-row flex-nowrap items-center"
       onClick={switchDarkMode}
     >
-      <BsMoon size={22} className="pr-2" />
+      <IoMoonOutline size={22} className="pr-2" />
       <span className="text-xs font-semibold">Dark Mode</span>
     </button>
   );
