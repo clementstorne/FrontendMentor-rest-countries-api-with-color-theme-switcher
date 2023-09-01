@@ -19,7 +19,7 @@ const switchDarkMode = (e: React.MouseEvent<HTMLButtonElement>): void => {
   }
 };
 
-const DarkModeButton = () => {
+const DarkModeButton = (): JSX.Element => {
   useEffect(() => {
     if (localStorage.getItem("darkMode") === "true") {
       document.documentElement.classList.add("dark");
