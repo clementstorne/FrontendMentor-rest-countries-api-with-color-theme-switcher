@@ -6,8 +6,28 @@ import CountryCard from "../components/CountryCard";
 import FilterSelect from "../components/FilterSelect";
 
 import countries from "../__mocks__/data.json";
+import CountryService from "../services/CountryService";
 
-const countriesArray: Country[] = countries;
+const sortCountries = (arr: Country[]): Country[] => {
+  return arr.sort((a, b) =>
+    a.name.common > b.name.common ? 1 : a.name.common < b.name.common ? -1 : 0
+  );
+};
+
+const fetchData = async (): Promise<Country[]> => {
+  try {
+    const dataArray: Country[] = await CountryService.getAll();
+    return sortCountries(dataArray);
+  } catch (error) {
+    console.error(
+      "Une erreur s'est produite lors de la récupération des pays.",
+      error
+    );
+    throw error;
+  }
+};
+
+const countriesArray: Country[] = await fetchData();
 const regionsArray: string[] = [
   ...new Set(countries.map((country) => country.region).sort()),
 ];
@@ -28,7 +48,7 @@ export default function Home() {
   useEffect(() => {
     const filterByCountry = (arr: Country[], filter: string): Country[] => {
       return arr.filter((country) => {
-        return country.name.toLowerCase().includes(filter.toLowerCase());
+        return country.name.common.toLowerCase().includes(filter.toLowerCase());
       });
     };
 
@@ -67,15 +87,15 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex flex-col md:flex-row flex-wrap items-center md:justify-between -m-1">
+        <div className="flex flex-col md:flex-row flex-wrap items-stretch md:justify-between -m-1">
           {countriesToShow.map((country, index) => (
             <CountryCard
               key={index}
-              name={country.name}
+              name={country.name.common}
               population={country.population}
               region={country.region}
               capital={country.capital ? country.capital : "none"}
-              flag={country.flags.svg}
+              flag={country.flags}
             />
           ))}
         </div>

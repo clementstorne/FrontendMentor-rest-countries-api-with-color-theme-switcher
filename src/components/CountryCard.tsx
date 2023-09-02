@@ -3,7 +3,7 @@ type CountryCardProps = {
   population: number;
   region: string;
   capital: string;
-  flag: string;
+  flag: Flags;
 };
 
 const formatNumber = (n: number): string => {
@@ -22,8 +22,8 @@ const CountryCard = ({
   return (
     <div className="w-full max-w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-lightElement dark:bg-darkElement rounded-md">
       <img
-        src={flag}
-        alt={`The flag of ${name}`}
+        src={flag.svg}
+        alt={flag.alt ? flag.alt : `The flag of ${name}`}
         className="object-cover w-full h-[161px] rounded-t-md"
       />
       <div className="p-6">

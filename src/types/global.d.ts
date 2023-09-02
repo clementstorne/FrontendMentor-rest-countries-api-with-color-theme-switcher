@@ -29,9 +29,16 @@ declare global {
     independent: boolean;
   };
 
+  type CountryName = {
+    common: string;
+    official: string;
+    nativeName: object;
+  };
+
   type Flags = {
     svg: string;
     png: string;
+    alt: string;
   };
 
   type Currency = {
