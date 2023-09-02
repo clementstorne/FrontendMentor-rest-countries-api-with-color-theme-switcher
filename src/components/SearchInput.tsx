@@ -24,12 +24,12 @@ const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
         id="filter"
         aria-describedby="filter-label"
         spellCheck="false"
-        className="w-full h-12 rounded mb-10 pl-[74px] bg-lightElement dark:bg-darkElement placeholder-lightInput dark:placeholder-darkText text-xs font-normal"
+        className="w-full md:w-[480px] h-12 md:h-14 rounded mb-10 pl-[74px] bg-lightElement dark:bg-darkElement placeholder-lightInput dark:placeholder-darkText text-xs md:text-sm font-normal"
         placeholder="Search for a country…"
         value={filter}
         onChange={handleChange}
       />
-      <IoSearch className="absolute left-8 top-4" />
+      <IoSearch className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5" />
     </div>
   );
 };
