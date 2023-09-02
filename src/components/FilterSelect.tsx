@@ -28,7 +28,7 @@ const FilterSelect = ({
   return (
     <div className="relative w-[200px]">
       <div
-        className="w-full h-12 md:h-14 mb-[31px] pl-6 rounded-md bg-lightElement dark:bg-darkElement flex items-center text-xs md:text-sm font-normal cursor-pointer"
+        className="w-full h-12 md:h-14 mb-[31px] md:mb-[47px] pl-6 rounded-md bg-lightElement dark:bg-darkElement flex items-center text-xs md:text-sm font-normal cursor-pointer"
         onClick={toggleDropdown}
       >
         {filter.length === 0 ? "Filter by Region" : filter}

@@ -20,8 +20,12 @@ const CountryCard = ({
   const populationString: string = formatNumber(population);
 
   return (
-    <div className="mb-10 bg-lightElement dark:bg-darkElement rounded-md">
-      <img src={flag} alt={`The flag of ${name}`} className="rounded-t-md" />
+    <div className="w-full max-w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-lightElement dark:bg-darkElement rounded-md">
+      <img
+        src={flag}
+        alt={`The flag of ${name}`}
+        className="object-cover w-full h-[161px] rounded-t-md"
+      />
       <div className="p-6">
         <h2 className="text-lg font-extrabold mb-4">{name}</h2>
         <div className="text-sm">

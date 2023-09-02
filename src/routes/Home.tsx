@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="px-4 py-6">
+      <main className="px-4 md:px-20 py-6">
         <div className="md:flex md:flex-row md:flex-nowrap md:justify-between md:items-start">
           <SearchInput onChangeOfFilter={handleChangeOfCountryFilter} />
 
@@ -67,7 +67,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="px-10">
+        <div className="flex flex-col md:flex-row flex-wrap items-center md:justify-between -m-1">
           {countriesToShow.map((country, index) => (
             <CountryCard
               key={index}
