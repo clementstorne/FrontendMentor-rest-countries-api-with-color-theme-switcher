@@ -22,7 +22,7 @@ const CountryCard = ({
 
   return (
     <Link to={"/detail/" + name}>
-      <div className="w-full max-w-[265px] md:w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-lightElement dark:bg-darkElement rounded-md">
+      <div className="w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-lightElement dark:bg-darkElement rounded-md">
         <img
           src={flag}
           alt={flagAlt ? flagAlt : `The flag of ${name}`}

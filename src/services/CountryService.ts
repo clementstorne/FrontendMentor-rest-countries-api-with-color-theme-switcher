@@ -11,9 +11,9 @@ class CountryService {
     }
   }
 
-  async getOneCountry(countryName: string): Promise<Country> {
+  async getOneCountry(countryName: string): Promise<CountryAPI> {
     try {
-      const res = await Axios.get<Country[]>("/name/" + countryName);
+      const res = await Axios.get<CountryAPI[]>("/name/" + countryName);
       return res.data[0];
     } catch (error) {
       console.error(error);
