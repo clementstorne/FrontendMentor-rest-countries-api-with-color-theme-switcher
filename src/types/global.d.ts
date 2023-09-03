@@ -1,75 +1,63 @@
 export {};
 
 declare global {
+  type CountryAPI = {
+    name: Required<CountryName> & { nativeName: Record<string, CountryName> };
+    tld: string[];
+    cca2: string;
+    ccn3: string;
+    cca3: string;
+    cioc: string;
+    independant: boolean;
+    status: string;
+    unMember: boolean;
+    currencies: Record<string, Record<"name" | "symbol", string>>;
+    idd: {
+      root: string;
+      suffixes: string[];
+    };
+    capital: string[];
+    altSpellings: string[];
+    region: string;
+    subregion: string;
+    languages: Record<string, string>;
+    translations: Record<string, Record<["official" | "common"], string>>;
+    latlng: number[];
+    landlocked: boolean;
+    borders?: string[];
+    area: number;
+    demonyms: Record<string, Record<["f" | "m"], string>>;
+    flag: string;
+    maps: Record<"googleMaps" | "openStreetMap", string>;
+    population: number;
+    gini: Record<[number], number>;
+    fifa: string;
+    car: {
+      signs: string[];
+      side: "right" | "left";
+    };
+    timezones: string[];
+    continents: string[];
+    flags: Record<"svg" | "png" | "alt", string>;
+    coatOfArms: Record<"svg" | "png", string>;
+    startOfWeek: "monday" | "saturday";
+    capitalInfo: { latlng: number[] };
+  };
+
+  type CountryName = Record<"common" | "official", string>;
+
   type Country = {
     name: string;
-    topLevelDomain: string[];
-    alpha2Code: string;
-    alpha3Code: string;
-    callingCodes: string[];
-    capital?: string;
-    altSpellings?: string[];
-    subregion: string;
-    region: string;
-    population: number;
-    latlng?: number[];
-    demonym: string;
-    area?: number;
-    timezones: string[];
-    borders?: string[];
     nativeName: string;
-    numericCode: string;
-    flags: Flags;
-    currencies?: Currency[];
-    languages: Language[];
-    translations: Translations;
+    population: number;
+    region: string;
+    subRegion: string;
+    capital: string;
+    topLevelDomain: string;
+    currencies: string[];
+    languages: string[];
+    borderCountries?: string[];
     flag: string;
-    regionalBlocs?: regionalBloc[];
-    cioc?: string;
-    independent: boolean;
-  };
-
-  type CountryName = {
-    common: string;
-    official: string;
-    nativeName: object;
-  };
-
-  type Flags = {
-    svg: string;
-    png: string;
-    alt: string;
-  };
-
-  type Currency = {
-    code: string;
-    name: string;
-    symbol: string;
-  };
-
-  type Language = {
-    iso639_1?: string;
-    iso639_2: string;
-    name: string;
-    nativeName?: string;
-  };
-
-  type Translations = {
-    br: string;
-    pt: string;
-    nl: string;
-    hr: string;
-    fa?: string;
-    de: string;
-    es: string;
-    fr: string;
-    ja: string;
-    it: string;
-    hu: string;
-  };
-
-  type regionalBloc = {
-    acronym: string;
-    name: string;
+    flagAlt: string;
   };
 }

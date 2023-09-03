@@ -3,8 +3,8 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
-import Home from "./routes/Home";
-import Detail from "./routes/Detail";
+import Home from "./pages/Home";
+import Detail from "./pages/Detail";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/detail",
+    path: "/detail/:countryName",
     element: <Detail />,
   },
 ]);

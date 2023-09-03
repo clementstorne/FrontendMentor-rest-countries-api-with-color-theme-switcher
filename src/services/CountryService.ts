@@ -1,22 +1,22 @@
-import axios, { AxiosInstance } from "axios";
-
-const Axios: AxiosInstance = axios.create({
-  baseURL: "https://restcountries.com/v3.1/",
-  headers: {
-    "Content-type": "application/json",
-  },
-});
+import Axios from "../lib/axios";
 
 class CountryService {
-  async getAll(): Promise<Country[]> {
+  async getAll(): Promise<CountryAPI[]> {
     try {
-      const res = await Axios.get<Array<Country>>("/all");
+      const res = await Axios.get<Array<CountryAPI>>("/all");
       return res.data;
     } catch (error) {
-      console.error(
-        "Une erreur s'est produite lors de la récupération des pays.",
-        error
-      );
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async getOneCountry(countryName: string): Promise<Country> {
+    try {
+      const res = await Axios.get<Country[]>("/name/" + countryName);
+      return res.data[0];
+    } catch (error) {
+      console.error(error);
       throw error;
     }
   }

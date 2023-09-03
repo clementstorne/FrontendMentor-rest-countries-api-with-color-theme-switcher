@@ -26,7 +26,7 @@ const FilterSelect = ({
   };
 
   return (
-    <div className="relative w-[200px]">
+    <div className="relative min-w-[200px] w-[200px]">
       <div
         className="w-full h-12 md:h-14 mb-[31px] md:mb-[47px] pl-6 rounded-md bg-lightElement dark:bg-darkElement flex items-center text-xs md:text-sm font-normal cursor-pointer"
         onClick={toggleDropdown}
