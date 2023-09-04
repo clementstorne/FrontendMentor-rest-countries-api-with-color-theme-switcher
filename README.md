@@ -15,10 +15,19 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ### Screenshot
 
+![Screenshot of home page in light mode on a mobile device](./screenshots/mobile-home-light.png)
+![Screenshot of home page in dark mode on a mobile device](./screenshots/mobile-home-dark.png)
+![Screenshot of the detail page in light mode on a mobile device](./screenshots/mobile-detail-light.png)
+![Screenshot of the detail page in dark mode on a mobile device](./screenshots/mobile-detail-dark.png)
+![Screenshot of home page in light mode on a desktop device](./screenshots/desktop-home-light.png)
+![Screenshot of home page in dark mode on a desktop device](./screenshots/desktop-home-dark.png)
+![Screenshot of the detail page in light mode on a desktop device](./screenshots/desktop-detail-light.png)
+![Screenshot of the detail page in dark mode on a desktop device](./screenshots/desktop-detail-dark.png)
+
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: [https://github.com/clementstorne/FrontendMentor-rest-countries-api-with-color-theme-switcher](https://github.com/clementstorne/FrontendMentor-rest-countries-api-with-color-theme-switcher)
+- Live Site URL: [https://countries-clementstorne.netlify.app/](https://countries-clementstorne.netlify.app/)
 
 ## My process
 
@@ -26,6 +35,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 - React
 - TypeScript
+- Tailwind
 
 ## Author
 
