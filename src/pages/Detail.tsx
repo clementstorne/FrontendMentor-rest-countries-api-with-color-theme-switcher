@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 
 import Header from "../layouts/Header";
-import LinkButton from "../layouts/LinkButton";
+import BackButton from "../layouts/BackButton";
 
 import Country from "../services/models/Country";
 import CountryService from "../services/CountryService";
+import CountryDetailedCard from "../components/CountryDetailedCard";
 
 export default function Detail() {
-  const countryNameInPath: string =
-    window.location.pathname.split("detail/")[1];
-
+  const [countryNameInPath, setCountryNameInPath] = useState(
+    window.location.pathname.split("detail/")[1]
+  );
   const [country, setCountry] = useState<Country | null>(null);
+
+  const updateData = (str: string): void => {
+    setCountryNameInPath(str);
+  };
 
   useEffect(() => {
     const fetchData = async (countryName: string): Promise<Country> => {
@@ -30,14 +35,18 @@ export default function Detail() {
     fetchData(countryNameInPath);
   }, [countryNameInPath]);
 
-  console.log(country);
-
   return (
     <>
       <Header />
 
-      <main className="px-7 py-10">
-        <LinkButton text={"Back"} />
+      <BackButton />
+
+      <main className="px-7">
+        {country !== null ? (
+          <CountryDetailedCard country={country} updateCountry={updateData} />
+        ) : (
+          <p>Data can't be fetched.</p>
+        )}
       </main>
     </>
   );

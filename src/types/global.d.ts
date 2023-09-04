@@ -47,6 +47,7 @@ declare global {
   type CountryName = Record<"common" | "official", string>;
 
   type Country = {
+    cca3: string;
     name: string;
     nativeName: string;
     population: number;
@@ -56,8 +57,11 @@ declare global {
     topLevelDomain: string;
     currencies: string[];
     languages: string[];
-    borderCountries?: string[];
+    borderCountriesCodes?: string[];
+    borderCountriesNames?: string[];
     flag: string;
     flagAlt: string;
   };
+
+  type CountryCodesToNamesArray = Array<Record<string, string>>;
 }

@@ -77,6 +77,7 @@ export default function Home() {
               capital={country.capital}
               flag={country.flag}
               flagAlt={country.flagAlt}
+              code={country.cca3}
             />
           ))}
         </div>

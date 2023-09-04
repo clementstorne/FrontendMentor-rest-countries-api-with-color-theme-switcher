@@ -8,6 +8,7 @@ type CountryCardProps = {
   capital: string;
   flag: string;
   flagAlt: string;
+  code: string;
 };
 
 const CountryCard = ({
@@ -17,11 +18,12 @@ const CountryCard = ({
   capital,
   flag,
   flagAlt,
+  code,
 }: CountryCardProps): JSX.Element => {
   const populationString: string = formatNumber(population);
 
   return (
-    <Link to={"/detail/" + name}>
+    <Link to={"/detail/" + code}>
       <div className="w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-lightElement dark:bg-darkElement rounded-md">
         <img
           src={flag}
