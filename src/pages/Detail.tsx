@@ -41,7 +41,7 @@ export default function Detail() {
 
       <BackButton />
 
-      <main className="px-7">
+      <main className="px-7 md:px-20">
         {country !== null ? (
           <CountryDetailedCard country={country} updateCountry={updateData} />
         ) : (
