@@ -24,7 +24,7 @@ const CountryCard = ({
 
   return (
     <Link to={"/detail/" + code}>
-      <div className="w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-lightElement dark:bg-darkElement rounded-md">
+      <div className="w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-white dark:bg-gunmetalLight rounded-md">
         <img
           src={flag}
           alt={flagAlt ? flagAlt : `The flag of ${name}`}

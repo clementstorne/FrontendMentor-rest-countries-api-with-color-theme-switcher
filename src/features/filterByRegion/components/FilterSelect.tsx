@@ -28,7 +28,7 @@ const FilterSelect = ({
   return (
     <div className="relative min-w-[200px] w-[200px]">
       <div
-        className="w-full h-12 md:h-14 mb-[31px] md:mb-[47px] pl-6 rounded-md bg-lightElement dark:bg-darkElement flex items-center text-xs md:text-sm font-normal cursor-pointer"
+        className="w-full h-12 md:h-14 mb-[31px] md:mb-[47px] pl-6 rounded-md bg-white dark:bg-gunmetalLight flex items-center text-xs md:text-sm font-normal cursor-pointer"
         onClick={toggleDropdown}
       >
         {filter.length === 0 ? "Filter by Region" : filter}
@@ -47,7 +47,7 @@ const FilterSelect = ({
       )}
 
       {!isDropdownCollapsed ? (
-        <div className="w-full min-h-12 px-6 py-4 rounded-md bg-lightElement dark:bg-darkElement text-xs md:text-sm font-normal absolute top-[51px] md:top-[60px] left-0">
+        <div className="w-full min-h-12 px-6 py-4 rounded-md bg-white dark:bg-gunmetalLight text-xs md:text-sm font-normal absolute top-[51px] md:top-[60px] left-0">
           <ul>
             {regionsArray.map((region) => (
               <li

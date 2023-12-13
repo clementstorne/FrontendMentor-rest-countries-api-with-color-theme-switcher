@@ -4,18 +4,24 @@ export default {
   darkMode: "class",
   theme: {
     colors: {
-      darkBackground: "#202c36",
-      darkElement: "#2a3744",
-      darkText: "#ffffff",
-      lightBackground: "#fafafa",
-      lightElement: "#ffffff",
-      lightText: "#111517",
-      lightInput: "#858585",
+      gunmetal: "#202c36",
+      gunmetalLight: "#2a3744",
+      white: "#ffffff",
+      seasalt: "#fafafa",
+      night: "#111517",
+      battleshipGray: "#848484",
     },
     fontFamily: {
       sans: ["Nunito Sans"],
     },
-    extend: {},
+    dropShadow: {
+      base: "0px 2px 4px rgba(0, 0, 0, 0.0562)",
+    },
+    extend: {
+      spacing: {
+        15: "30px",
+      },
+    },
   },
   plugins: [],
 };
