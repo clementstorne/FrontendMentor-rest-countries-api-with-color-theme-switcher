@@ -4,7 +4,7 @@ import DarkModeButton from "./DarkModeButton";
 const Header = (): JSX.Element => {
   return (
     <header id="header">
-      <Link to={"/"} className="text-sm font-extrabold md:text-2xl">
+      <Link to={"/"} className="text-sm md:text-2xl font-extrabold">
         <h1>Where in the world?</h1>
       </Link>
       <DarkModeButton />
