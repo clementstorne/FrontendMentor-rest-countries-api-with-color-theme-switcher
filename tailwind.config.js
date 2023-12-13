@@ -17,9 +17,17 @@ export default {
     dropShadow: {
       base: "0px 2px 4px rgba(0, 0, 0, 0.0562)",
     },
+    borderRadius: {
+      DEFAULT: "5px",
+    },
     extend: {
       spacing: {
         15: "30px",
+        18.5: "74px",
+        120: "480px",
+      },
+      maxWidth: {
+        120: "480px",
       },
     },
   },

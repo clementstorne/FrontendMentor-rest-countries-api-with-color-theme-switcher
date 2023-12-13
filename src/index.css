@@ -11,6 +11,13 @@
     bg-white text-night
     dark:bg-gunmetalLight dark:text-white;
   }
+
+  #filter {
+    @apply w-full max-w-120 h-12 mb-10 pl-18.5 text-xs font-normal rounded
+    md:w-120 md:h-14 md:mb-12 md:text-sm
+    bg-white placeholder-battleshipGray
+    dark:bg-gunmetalLight dark:placeholder-white;
+  }
 }
 
 input:focus,

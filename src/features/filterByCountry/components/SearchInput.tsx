@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { IoSearch } from "react-icons/io5";
 
 type SearchInputProps = {
   onChangeOfFilter: (str: string) => void;
@@ -24,12 +23,15 @@ const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
         id="filter"
         aria-describedby="filter-label"
         spellCheck="false"
-        className="w-full max-w-[480px] md:w-[480px] h-12 md:h-14 rounded mb-10 pl-[74px] bg-white dark:bg-gunmetalLight placeholder-battleshipGray dark:placeholder-white text-xs md:text-sm font-normal"
         placeholder="Search for a country…"
         value={filter}
         onChange={handleChange}
       />
-      <IoSearch className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5" />
+      <img
+        src="./search.svg"
+        alt="Search icon"
+        className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5"
+      />
     </div>
   );
 };

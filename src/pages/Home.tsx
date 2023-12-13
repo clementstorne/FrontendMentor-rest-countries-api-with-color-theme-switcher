@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="px-4 md:px-20 py-6">
+      <main className="px-4 py-6 md:px-20 md:py-12">
         <div className="md:flex md:flex-row md:flex-wrap md:justify-between md:items-start">
           <SearchInput onChangeOfFilter={handleChangeOfCountryFilter} />
 
