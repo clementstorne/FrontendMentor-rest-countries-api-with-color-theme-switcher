@@ -28,12 +28,20 @@
 
   #filter-dropdown-list {
     @apply absolute w-full px-6 py-4 top-13 left-0 rounded
-    bg-white text-night md:top-15
+    md:top-15
+    bg-white text-night
     dark:bg-gunmetalLight dark:text-white;
   }
 
   .dropdown-icon {
     @apply absolute right-4.75 top-4.75 md:right-4.5 md:top-5.5 cursor-pointer;
+  }
+
+  .country-card {
+    @apply w-66 h-84 mb-10 rounded
+    md:mb-18.75 
+    bg-white text-night
+    dark:bg-gunmetalLight dark:text-white;
   }
 }
 

@@ -24,20 +24,20 @@ const CountryCard = ({
 
   return (
     <Link to={"/detail/" + code}>
-      <div className="w-[265px] md:mx-1 mb-10 md:mb-[75px] bg-white dark:bg-gunmetalLight rounded-md">
+      <div className="country-card">
         <img
           src={flag}
           alt={flagAlt ? flagAlt : `The flag of ${name}`}
-          className="object-cover w-full h-[161px] rounded-t-md"
+          className="object-cover w-full h-40 rounded-t"
         />
         <div className="p-6">
           <h2 className="text-lg font-extrabold mb-4">{name}</h2>
           <div className="text-sm">
-            <p className="mb-1">
+            <p className="mb-2">
               <span className="font-semibold">Population:</span>{" "}
               {populationString}
             </p>
-            <p className="mb-1">
+            <p className="mb-2">
               <span className="font-semibold">Region:</span> {region}
             </p>
             <p>
