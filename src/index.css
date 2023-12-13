@@ -6,7 +6,7 @@
 
 @layer components {
   #header {
-    @apply w-full h-20 px-4 py-15 flex flex-row flex-nowrap justify-between items-center drop-shadow-base
+    @apply w-full h-20 px-4 py-7.5 flex flex-row flex-nowrap justify-between items-center drop-shadow-base
     md:px-20 md:py-6
     bg-white text-night
     dark:bg-gunmetalLight dark:text-white;
@@ -17,6 +17,23 @@
     md:w-120 md:h-14 md:mb-12 md:text-sm
     bg-white placeholder-battleshipGray
     dark:bg-gunmetalLight dark:placeholder-white;
+  }
+
+  #filter-dropdown {
+    @apply w-full h-12 mb-8 px-6 py-3.5 flex items-center cursor-pointer rounded
+    md:h-14 md:mb-12
+    bg-white text-night
+    dark:bg-gunmetalLight dark:text-white;
+  }
+
+  #filter-dropdown-list {
+    @apply absolute w-full px-6 py-4 top-13 left-0 rounded
+    bg-white text-night md:top-15
+    dark:bg-gunmetalLight dark:text-white;
+  }
+
+  .dropdown-icon {
+    @apply absolute right-4.75 top-4.75 md:right-4.5 md:top-5.5 cursor-pointer;
   }
 }
 

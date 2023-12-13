@@ -22,9 +22,18 @@ export default {
     },
     extend: {
       spacing: {
-        15: "30px",
+        4.5: "18px",
+        4.75: "19px",
+        5.5: "22px",
+        7.5: "30px",
+        13: "52px",
+        15: "60px",
         18.5: "74px",
+        50: "200px",
         120: "480px",
+      },
+      minWidth: {
+        50: "200px",
       },
       maxWidth: {
         120: "480px",

@@ -26,32 +26,23 @@ const FilterSelect = ({
   };
 
   return (
-    <div className="relative min-w-[200px] w-[200px]">
-      <div
-        className="w-full h-12 md:h-14 mb-[31px] md:mb-[47px] pl-6 rounded-md bg-white dark:bg-gunmetalLight flex items-center text-xs md:text-sm font-normal cursor-pointer"
-        onClick={toggleDropdown}
-      >
+    <div className="relative min-w-50 w-50 text-xs md:text-sm font-normal">
+      <div id="filter-dropdown" onClick={toggleDropdown}>
         {filter.length === 0 ? "Filter by Region" : filter}
       </div>
 
       {isDropdownCollapsed ? (
-        <IoChevronDown
-          className="absolute right-[18px] top-[18px] md:top-[21px] cursor-pointer"
-          onClick={toggleDropdown}
-        />
+        <IoChevronDown className="dropdown-icon" onClick={toggleDropdown} />
       ) : (
-        <IoChevronUp
-          className="absolute right-[18px] top-[18px] md:top-[21px] cursor-pointer"
-          onClick={toggleDropdown}
-        />
+        <IoChevronUp className="dropdown-icon" onClick={toggleDropdown} />
       )}
 
       {!isDropdownCollapsed ? (
-        <div className="w-full min-h-12 px-6 py-4 rounded-md bg-white dark:bg-gunmetalLight text-xs md:text-sm font-normal absolute top-[51px] md:top-[60px] left-0">
+        <div id="filter-dropdown-list">
           <ul>
             {regionsArray.map((region) => (
               <li
-                className="pb-2 md:pb-[9px] cursor-pointer hover:font-extrabold"
+                className="pb-2 cursor-pointer hover:font-extrabold"
                 key={region}
                 onClick={handleClick}
               >
