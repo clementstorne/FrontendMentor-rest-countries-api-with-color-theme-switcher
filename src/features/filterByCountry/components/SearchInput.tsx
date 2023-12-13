@@ -14,7 +14,7 @@ const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative text-battleshipGray dark:text-white">
       <label htmlFor="filter" id="filter-label" className="visuallyhidden">
         Search for a country
       </label>
@@ -28,7 +28,7 @@ const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
         onChange={handleChange}
       />
       <img
-        src="./search.svg"
+        src="./search2.svg"
         alt="Search icon"
         className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5"
       />
