@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useTheme from "../../../hooks/useTheme";
 
 type SearchInputProps = {
   onChangeOfFilter: (str: string) => void;
@@ -6,6 +7,7 @@ type SearchInputProps = {
 
 const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
   const [filter, setFilter] = useState("");
+  const { isDarkMode } = useTheme();
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>): void => {
     const { value } = e.currentTarget;
@@ -27,11 +29,19 @@ const SearchInput = ({ onChangeOfFilter }: SearchInputProps): JSX.Element => {
         value={filter}
         onChange={handleChange}
       />
-      <img
-        src="./search2.svg"
-        alt="Search icon"
-        className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5"
-      />
+      {isDarkMode === "true" ? (
+        <img
+          src="./search.svg"
+          alt="Search icon"
+          className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5"
+        />
+      ) : (
+        <img
+          src="./search2.svg"
+          alt="Search icon"
+          className="absolute left-8 top-4 md:top-[18px] md:w-5 md:h-5"
+        />
+      )}
     </div>
   );
 };

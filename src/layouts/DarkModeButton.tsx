@@ -1,41 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+
+import useTheme from "../hooks/useTheme";
 
 const DarkModeButton = (): JSX.Element => {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode"));
+  const { isDarkMode, toggleTheme } = useTheme();
 
-  const switchDarkMode = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault;
-    const isDarkModeEnabled: string | null = localStorage.getItem("darkMode");
-
-    if (isDarkModeEnabled) {
-      if (isDarkModeEnabled === "true") {
-        localStorage.setItem("darkMode", "false");
-        document.documentElement.classList.remove("dark");
-        setDarkMode("false");
-      } else {
-        localStorage.setItem("darkMode", "true");
-        document.documentElement.classList.add("dark");
-        setDarkMode("true");
-      }
-    } else {
-      localStorage.setItem("darkMode", "true");
-      document.documentElement.classList.add("dark");
-      setDarkMode("true");
-    }
+  const handleOnClick = () => {
+    toggleTheme();
   };
 
   useEffect(() => {
-    if (darkMode === "true") {
-      document.documentElement.classList.add("dark");
-    }
-  }, [darkMode]);
+    document.documentElement.classList.toggle("dark", isDarkMode === "true");
+  }, [isDarkMode]);
 
   return (
     <button
       className="flex flex-row flex-nowrap items-center"
-      onClick={switchDarkMode}
+      onClick={handleOnClick}
     >
-      {darkMode === "true" ? (
+      {isDarkMode === "true" ? (
         <img
           src="./moon-fill.svg"
           alt="Dark mode enabled"
