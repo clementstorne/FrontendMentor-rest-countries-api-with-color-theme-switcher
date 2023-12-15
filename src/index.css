@@ -43,6 +43,13 @@
     bg-white text-night
     dark:bg-gunmetalLight dark:text-white;
   }
+
+  .back-button {
+    @apply relative w-26 h-8 mx-7 mt-10 mb-16 pl-12.5 pr-6 rounded drop-shadow-button flex flex-row flex-nowrap justify-center items-center text-sm font-light
+    md:w-34 md:h-10 md:m-20 md:pl-15.5 md:pr-9.75 md:text-base
+    bg-white text-night
+    dark:bg-gunmetalLight dark:text-white;
+  }
 }
 
 input:focus,

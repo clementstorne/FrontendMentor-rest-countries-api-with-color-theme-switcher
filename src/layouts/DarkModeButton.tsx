@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 import useTheme from "../hooks/useTheme";
 
+import { IoMoon, IoMoonOutline } from "react-icons/io5";
+
 const DarkModeButton = (): JSX.Element => {
   const { isDarkMode, toggleTheme } = useTheme();
 
@@ -19,17 +21,9 @@ const DarkModeButton = (): JSX.Element => {
       onClick={handleOnClick}
     >
       {isDarkMode === "true" ? (
-        <img
-          src="./moon-fill.svg"
-          alt="Dark mode enabled"
-          className="mr-2 md:w-5 md:h-5"
-        />
+        <IoMoon className="mr-2 md:w-5 md:h-5" />
       ) : (
-        <img
-          src="./moon-stroke.svg"
-          alt="Dark mode disabled"
-          className="mr-2 md:w-5 md:h-5"
-        />
+        <IoMoonOutline className="mr-2 md:w-5 md:h-5" />
       )}
       <span className="text-xs md:text-base font-semibold">Dark Mode</span>
     </button>
